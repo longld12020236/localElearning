@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117063855) do
+ActiveRecord::Schema.define(version: 20161120104737) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "action_table_id"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20161117063855) do
     t.boolean  "is_admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "words", force: :cascade do |t|
