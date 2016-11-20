@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exam: one
+  user: one
+  user_answer_id: 1
+  word_id: 1
+
+two:
+  exam: two
+  user: two
+  user_answer_id: 1
+  word_id: 1
