@@ -1,7 +1,22 @@
-<%= provide(:title, 'Home')%>
-<div class="center jumbotron">
-  <h1>Welcome to E learning</h1>
+<% if logged_in? %>
+  <div class="subtoc padding_top">
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+      </section>
+      </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron ">
+    <h1 style="color: red" ><font size ="+10">Welcome to E Learning</font></h1>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  
+
+    <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary create" %>
+  </div>
+  <% end %>
 </div>
+
