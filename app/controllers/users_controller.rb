@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :admin_user,     only: :destroy
   def new
   	@user = User.new
   end
@@ -42,4 +43,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                    :password_confirmation)
     end
+    def admin_user
+      redirect_to(root_url) unless current_user.is_admin?
+  end
 end
