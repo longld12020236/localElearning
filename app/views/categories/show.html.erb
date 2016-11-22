@@ -4,10 +4,12 @@
 
   <ul class="users">
        <%= render @lessons %>
+       <% if current_user.is_admin? %>
 <%= form_for(Lesson.new) do |f| %>
 <input type="hidden" name="category_id" value="<%= params[:id]%>" />
   <%= f.text_area :tittle %>
   <%= f.submit "create", class: "btn btn-primary"%>
+  <%end%>
   <%end%>
   </ul>
 
