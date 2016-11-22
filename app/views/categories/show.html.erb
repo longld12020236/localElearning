@@ -1,0 +1,16 @@
+<% provide(:title, @category.tittle ) %>
+<div class="subtoc">
+  <h1>All lessons of <%= @category.tittle %></h1>
+
+  <ul class="users">
+       <%= render @lessons %>
+<%= form_for(Lesson.new) do |f| %>
+<input type="hidden" name="category_id" value="<%= params[:id]%>" />
+  <%= f.text_area :tittle %>
+  <%= f.submit "create", class: "btn btn-primary"%>
+  <%end%>
+  </ul>
+
+
+
+</div>

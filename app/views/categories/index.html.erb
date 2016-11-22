@@ -1,0 +1,15 @@
+<% provide(:title, "Categories") %>
+<div class="subtoc">
+  <h1>All Categories</h1>
+
+  <ul class="users">
+       <%= render @categories %>
+<%= form_for(Category.new) do |f| %>
+  <%= f.text_area :tittle %>
+  <%= f.submit "create", class: "btn btn-primary"%>
+  <%end%>
+  </ul>
+
+
+
+</div>
