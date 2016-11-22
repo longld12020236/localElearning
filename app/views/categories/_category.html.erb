@@ -1,2 +1,6 @@
-<li><%= category.tittle %><span class="right"><%= link_to "Show", category_path(category) %> | <%= link_to "Delete", category, method: :delete, data: {confirm: "Are you sure?"}%> | <%= link_to "Edit", edit_category_path(category)%></span></li>
+<li><%= category.tittle %><span class="right">
+<%= link_to "Show", category_path(category) %>
+<% if current_user.is_admin? %>
+ | <%= link_to "Delete", category, method: :delete, data: {confirm: "Are you sure?"}%> | <%= link_to "Edit", edit_category_path(category)%></span>
+<%end%></li>
 

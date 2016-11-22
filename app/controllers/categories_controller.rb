@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+
   def create
     @category = Category.new(category_params)
     if @category.save
@@ -32,7 +34,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update_attributes(category_params)
         flash[:success] = "Updated"
-        redirect_to categories_path
+        redirect_to categories_path(@category_id)
       else
         render 'edit'
       end

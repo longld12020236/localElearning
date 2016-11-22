@@ -1,6 +1,10 @@
 class LessonsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   def new
     @comment=Comment.all
+  end
+
+  def show
   end
 
   def create
@@ -17,6 +21,20 @@ class LessonsController < ApplicationController
       @lesson.destroy
     end
     redirect_to :back
+  end
+
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update_attributes(lesson_params)
+      flash[:success] = "Updated"
+      redirect_to category_path(@lesson.category_id)
+    else
+      render 'edit'
+    end
   end
 
   private
