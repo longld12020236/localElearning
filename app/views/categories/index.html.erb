@@ -4,9 +4,11 @@
 
   <ul class="users">
        <%= render @categories %>
+       <% if current_user.is_admin? %>
 <%= form_for(Category.new) do |f| %>
   <%= f.text_area :tittle %>
   <%= f.submit "create", class: "btn btn-primary"%>
+  <%end%>
   <%end%>
   </ul>
 

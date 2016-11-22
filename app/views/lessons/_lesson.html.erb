@@ -1,1 +1,8 @@
-<li><%= lesson.tittle %><span class="right"><%= link_to "Show", '#' %> | <%= link_to "Delete", lesson, method: :delete, data: {confirm: "Are you sure?"}%> | <%= link_to "Edit", '#'%></span></li>
+<li><%= lesson.tittle %>
+<span class="right">
+<% if current_user.is_admin? %>
+<%= link_to "Show", '#' %> | <%= link_to "Delete", lesson, method: :delete, data: {confirm: "Are you sure?"}%> | <%= link_to "Edit", '#'%>
+<%end%>
+| <%= link_to "Join Lesson", '#' %>
+</span>
+</li>
