@@ -1,0 +1,11 @@
+<% provide(:title, "Edit category") %>
+<h1>Edit</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@lesson) do |f| %>
+      <%= f.label :tittle %>
+      <%= f.text_field :tittle, class: 'form-control' %>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+</div>

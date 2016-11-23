@@ -17,10 +17,14 @@ Rails.application.routes.draw do
     resources :words, only: :index
   end
   resources :lessons
+<<<<<<< HEAD
 
 resources :categories do
     member do
         get :words
     end
 end
+=======
+  resources :user_lessons
+>>>>>>> category-lesson
 end
