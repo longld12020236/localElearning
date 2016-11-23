@@ -14,7 +14,6 @@ class CategoriesController < ApplicationController
   end
 
   def index
-   @categories = Category.all
   @categories = Category.paginate(page: params[:page])
   end
 

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Words</h1>
+<h1>All Words</h1>
 
 <table class="word" border="1" >
   <thead>
@@ -9,7 +9,7 @@
       <th>Mean</th>
       <th>Category</th>
        <th colspan="3">Action</th>
-      <th colspan="6"></th>
+
     </tr>
   </thead>
 
@@ -24,7 +24,7 @@
         <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    <%= link_to 'New Word', new_word_path %>
+<h3><%= link_to 'Create new word', new_word_path %></h3>
 
   </tbody>
 </table>
