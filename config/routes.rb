@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :categories
   resources :lessons
+  resources :user_lessons
 end

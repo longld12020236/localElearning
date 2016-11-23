@@ -1,10 +1,10 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   def new
-    @comment=Comment.all
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
   end
 
   def create
