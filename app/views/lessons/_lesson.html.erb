@@ -1,8 +1,18 @@
 <li><%= lesson.tittle %>
 <span class="right">
+<<<<<<< HEAD
 <% if current_user.is_admin? %>
 <%= link_to "Show", '#' %> | <%= link_to "Delete", lesson, method: :delete, data: {confirm: "Are you sure?"}%> | <%= link_to "Edit", '#'%>
 <%end%>
 | <%= link_to "Join Lesson", '#' %>
+=======
+<%= form_for(UserLesson.new) do |f| %>
+  <input type="hidden" name="lesson_id" value="<%= lesson.id %>" />
+  <%= f.submit "join", class: "btn btn-primary" %>
+<%end%>
+<% if current_user.is_admin? %>
+<%= link_to "Delete", lesson, method: :delete, data: {confirm: "Are you sure?"}%> | <%= link_to "Edit", edit_lesson_path(lesson) %>
+<%end%>
+>>>>>>> dfd94126c342c4da3d507c2fde2d00e62ff4a7b5
 </span>
 </li>

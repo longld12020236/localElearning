@@ -13,6 +13,7 @@ gem 'faker',          '1.6.6'
 gem 'jquery-rails', 	'4.1.1'
 gem 'turbolinks',   	'5.0.1'
 gem 'jbuilder',     	'2.4.1'
+gem 'byebug',         '3.4.0'
 
 group :development do
   gem 'web-console',           '3.1.1'
