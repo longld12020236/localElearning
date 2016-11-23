@@ -14,7 +14,8 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.paginate(page: params[:page])
+   @categories = Category.all
+  @categories = Category.paginate(page: params[:page])
   end
 
   def destroy
@@ -24,7 +25,6 @@ class CategoriesController < ApplicationController
     end
     redirect_to :back
   end
-
 
   def edit
     @category = Category.find(params[:id])

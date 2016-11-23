@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :words
   root  'static_pages#home'
   get 'contact'   =>  'static_pages#contact'
   get 'signup'    =>  'users#new'
@@ -11,6 +13,14 @@ Rails.application.routes.draw do
   	end
   end
   resources :relationships, only: [:create, :destroy]
-  resources :categories
+  resources :categories do
+    resources :words, only: :index
+  end
   resources :lessons
+
+resources :categories do
+    member do
+        get :words
+    end
+end
 end

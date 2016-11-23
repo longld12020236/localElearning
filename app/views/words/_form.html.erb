@@ -1,0 +1,31 @@
+<%= form_for(word) do |f| %>
+  <% if word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+      <% word.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="col-md-6 col-md-offset-3">
+  <div class="field">
+    <%= f.label :word %>
+    <%= f.text_field :word %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mean %>
+    <%= f.text_field :mean %>
+  </div>
+ <div class = f.fields_for :categorization do >
+     <%= f.label :tittle, 'Category'%>
+    <%= f.collection_select(:category_id, @categories, :id, :tittle, :include_blank => 'Select a Category')%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </div>
+<% end %>

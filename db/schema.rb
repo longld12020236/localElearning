@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120104737) do
+ActiveRecord::Schema.define(version: 20161123012020) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "action_table_id"
@@ -104,13 +104,12 @@ ActiveRecord::Schema.define(version: 20161120104737) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.string   "content"
+    t.string   "word"
+    t.string   "mean"
     t.integer  "category_id"
-    t.integer  "exam_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_words_on_category_id"
-    t.index ["exam_id"], name: "index_words_on_exam_id"
   end
 
 end
